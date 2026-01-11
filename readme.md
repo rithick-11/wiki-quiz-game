@@ -7,7 +7,6 @@ An interactive quiz game that generates questions from Wikipedia articles, featu
 - [Overview](#overview)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
 - [Installation](#installation)
 - [Usage](#usage)
 - [API Documentation](#api-documentation)
@@ -38,35 +37,10 @@ Wiki Quiz Game is a knowledge-testing application that dynamically generates qui
 
 ### Frontend (Client)
 - **JavaScript**: Core frontend language
-- **HTML5**: Markup structure
-- **CSS3**: Styling and responsive design
-- **Fetch API**: For making HTTP requests to backend
+- **react**: front lib
+- **tailwind**: Styling and responsive design
+- **axios**: For making HTTP requests to backend
 
-## 📁 Project Structure
-
-```
-wiki-quiz-game/
-├── client/                 # Frontend application
-│   ├── index.html         # Main HTML file
-│   ├── css/               # Stylesheets
-│   │   └── style.css      # Main stylesheet
-│   ├── js/                # JavaScript files
-│   │   ├── app.js         # Main application logic
-│   │   ├── quiz.js        # Quiz logic
-│   │   └── api.js         # API communication
-│   └── assets/            # Images and other assets
-│
-├── server/                # Backend application
-│   ├── app.py            # Main application file
-│   ├── routes/           # API routes
-│   ├── models/           # Data models
-│   ├── utils/            # Utility functions
-│   │   └── wikipedia.py  # Wikipedia API integration
-│   ├── config.py         # Configuration settings
-│   └── requirements.txt  # Python dependencies
-│
-└── README.md             # Project documentation
-```
 
 ## 🚀 Installation
 
