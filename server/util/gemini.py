@@ -1,18 +1,18 @@
 from google import genai
 import json
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 client = genai.Client(api_key=os.getenv("GEMINI_API"))
 
-
-
-
 def generate_quiz_question(scraped_data: dict):
     prompt = """
-You are an expert Wikipedia quiz generator. Your task is to analyze the provided scraped Wikipedia data and generate a structured JSON output **EXACTLY** in the following format. Do not add any extra text, explanations, or deviations—output only the valid JSON string within triple quotes.
+    You are an expert Wikipedia quiz generator. Your task is to analyze the provided scraped Wikipedia data and generate a structured JSON output **EXACTLY** in the following format. Do not add any extra text, explanations, or deviations—output only the valid JSON string within triple quotes.
 
-**Scraped Data:**
-{}
+    **Scraped Data:**
+    {}
 
 
 
@@ -59,4 +59,4 @@ json
     return json.loads(response)
     
 
-    
+print(os.getenv("GEMINI_API"))

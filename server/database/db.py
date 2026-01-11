@@ -2,6 +2,9 @@ import psycopg2
 import json
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class Db:
     connection = None
@@ -157,6 +160,28 @@ class Db:
         #     print(f"Error inserting data: {e}")
         #     raise
 
+    def get_quix_by_url(self, url: str):
+        self.cursor.execute("""SELECT data, id  from quiz_history WHERE url LIKE %s """, (url, ))
+        res = self.cursor.fetchone()
+
+        if res:
+            data = res[0]
+            data["id"] = res[1]
+            return data
+
+    def get_recent_quiz(self):
+        self.cursor.execute("SELECT * FROM quiz_history ORDER BY id DESC;")
+
+        quiz_history = []
+
+        res = self.cursor.fetchall()
+
+        for quiz in res:
+            data = quiz[1]
+            data["id"] = quiz[0]
+            quiz_history.append(data)
+
+        return quiz_history
 
     def __del__(self):
         if self.cursor:
