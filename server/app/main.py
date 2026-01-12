@@ -3,7 +3,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from util.helper import scrape_site
 from util.gemini import generate_quiz_question
 from database.db import Db
-from mangum import Mangum
 
 app= FastAPI()
 
@@ -50,5 +49,6 @@ def get_quiz_history():
     db = Db()
     return {"quiz history":db.get_recent_quiz()}
 
-
-handler = Mangum(app)
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
