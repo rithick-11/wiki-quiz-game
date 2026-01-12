@@ -29,12 +29,15 @@ const RecentQuiz = () => {
             return <div className='h-screen flex justify-center items-center'><p>loading .....</p></div>
         case apiStatus.success:
             return (
-                <div>
-                    {recentQuiz?.map(quiz => <Link to={`/quiz-game?url=${quiz.url}`} className='bg-white p-2 rounded-md shadow-lg' >
+                <div className='pt-4'>
+                    <h1 className='text-lg font-semibold mb-4'>Recent Quiz</h1>
+                    <div className='flex gap-3 flex-col'>
+                    {recentQuiz?.map(quiz => <Link to={`/quiz-game?url=${quiz.url}`} className=' flex flex-col bg-white p-2 rounded-md shadow-lg' >
                         <p>title :{quiz.title}</p>
-                        <p>{quiz.summary}</p>
+                        <p className='text-sm mb-3'>{quiz.summary}</p>
                         <a href={quiz.url}>{quiz.url}</a>
                     </Link>)}
+                </div>
                 </div>
             )
 
