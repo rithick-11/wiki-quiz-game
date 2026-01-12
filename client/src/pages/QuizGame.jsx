@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Navigate, useSearchParams } from 'react-router-dom'
+import { Link, Navigate, useSearchParams } from 'react-router-dom'
 import { apiStatus } from '../assets/static'
 import { api } from '../assets/api'
 import QuizSection from '../components/QuizSection'
@@ -58,6 +58,10 @@ const QuizGame = () => {
         case apiStatus.fail:
             return (<div className='h-screen flex justify-center ite'>
                 <h1>sorry failed to start the quiz game</h1>
+                <div className='flex gap-3'>
+                    <Link to={"/"} className='bg-blue-400 px-2 py-1 rounded-sm text-white'>Go to home </Link>
+                    <Link to='/quiz-recent' className='bg-gray-100 border rounded-sm px-2 py-1'> Recent quiz </Link>
+                </div>
             </div>)
 
     }

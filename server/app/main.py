@@ -47,7 +47,7 @@ def get_quiz(url: str):
 @app.get("/api/get-quiz-history")
 def get_quiz_history():
     db = Db()
-    return {"quiz history":db.get_recent_quiz()}
+    return {"quiz_history":db.get_recent_quiz()}
 
 if __name__ == "__main__":
     import uvicorn
