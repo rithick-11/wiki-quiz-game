@@ -27,7 +27,10 @@ const Home = () => {
             <div className='flex flex-col gap-2 items-center'>
                 <input type='text' placeholder='exp: https://en.wikipedia.org/wiki/Oops' className='rounded-sm bg-white outline-none px-2 py-1 w-[70vw] sm:w-[50vw] md:w-[30vw]' value={url} onChange={(e) => setUrl(e.target.value)} />
                 {err !== "" && <p className='text-xs text-red-600'>{err}</p>}
-                <button className='w-fit px-2 py-1 bg-cyan-300 border-cyan-700 rounded-lg' onClick={onStartGame}>Start Quiz</button>
+                <div className='flex gap-2 items-center'>
+                    <button className='w-fit px-2 py-1 bg-cyan-300 border-cyan-700 rounded-lg' onClick={onStartGame}>Start Quiz</button>
+                    <Link to='/quiz-recent' className='bg-gray-100 border rounded-sm px-2 py-1'> Recent quiz </Link>
+                </div>
             </div>
         </div>
     )
