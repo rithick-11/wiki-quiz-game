@@ -45,10 +45,12 @@ const QuizGame = () => {
         case apiStatus.success:
             return (
                 <section className='pt-3'>
-                    <h1 className='text-[1rem] text-black font-semibold'>Wiki Quiz Game</h1>
-                    <div className='grid grid-cols-12'>
+                    <div className='grid grid-cols-12 gap-3'>
                         <div className='col-span-12'>
-                            <h1>{title}</h1>
+                            <div className='flex gap-2'>
+                                <h1 className='text-[1rem] text-black font-semibold'>Wiki Quiz Game</h1>
+                                <h1>| {title}</h1>
+                            </div>
                         </div>
                         <QuizSection quiz={quizData.quiz} />
                     </div>
